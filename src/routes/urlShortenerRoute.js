@@ -27,7 +27,11 @@ router.post("/api/shorturl", (req, res) => {
 
             short.save()
                 .then(shortened => {
-                    res.json(shortened)
+                    const { original_url, short_url } = shortened
+                    res.json({
+                        original_url,
+                        short_url
+                    })
                 })
                 .catch(err => {
                     res.sendStatus(500)
