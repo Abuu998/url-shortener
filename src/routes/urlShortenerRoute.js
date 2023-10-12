@@ -8,10 +8,6 @@ const router = express.Router()
 router.post("/api/shorturl", (req, res) => {
     const { url } = req.body
 
-    if(!url) return res.json({
-        error: "Enter url"
-    })
-
     const urlObj = new URL(url)
 
     dns.lookup(urlObj.hostname, (err) => {
