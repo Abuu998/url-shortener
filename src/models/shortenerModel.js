@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-// import { nanoid } from "nanoid";
 
 
 // Utils
@@ -16,7 +15,7 @@ const urlShortenerSchema = new mongoose.Schema({
     },
     short_url: {
         type: String,
-        default: makeRandId() // nanoid(6)
+        default: makeRandId()
     }
 })
 
